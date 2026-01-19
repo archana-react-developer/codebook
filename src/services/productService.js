@@ -5,6 +5,7 @@ export async function getProductList(searchTerm) {
     }`
   );
   if (!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw {
       message: response.statusText,
       status: response.status,
@@ -17,6 +18,7 @@ export async function getProductList(searchTerm) {
 export async function getProduct(id) {
   const response = await fetch(`${process.env.REACT_APP_HOST}/444/products/${id}`);
   if (!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw {
       message: response.statusText,
       status: response.status,
@@ -29,6 +31,7 @@ export async function getProduct(id) {
 export async function getFeaturedList() {
   const response = await fetch(`${process.env.REACT_APP_HOST}/444/featured_products`);
   if (!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw {
       message: response.statusText,
       status: response.status,

@@ -21,6 +21,7 @@ export async function getUser() {
     requestOptions
   );
   if (!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw {
       message: response.statusText,
       status: response.status,
@@ -45,6 +46,7 @@ export async function getUserOrders() {
     requestOptions
   );
   if (!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw {
       message: response.statusText,
       status: response.status,
@@ -81,6 +83,7 @@ export async function createOrder(cartList, total, user) {
     requestOptions
   );
   if (!response.ok) {
+    // eslint-disable-next-line no-throw-literal
     throw {
       message: response.statusText,
       status: response.status,
