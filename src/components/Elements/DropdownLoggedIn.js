@@ -1,13 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../services";
 import { getUser } from "../../services";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
 export const DropdownLoggedIn = ({ setDropdown }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
+
+  const handleLogout = useCallback(() => {
+    logout();
+    setDropdown(false);
+    navigate("/");
+  }, [setDropdown, navigate]);
+
   useEffect(() => {
     async function fetchData() {
       // Placeholder for any future data fetching if needed
@@ -15,18 +22,14 @@ export const DropdownLoggedIn = ({ setDropdown }) => {
         const data = await getUser();
         data.email ? setUser(data) : handleLogout();
       } catch (error) {
-        toast.error(error.message,{closeButton: true, position: "bottom-center"});
+        toast.error(error.message, {
+          closeButton: true,
+          position: "bottom-center",
+        });
       }
-      
     }
     fetchData();
-  }, []);
-
-  function handleLogout() {
-    logout();
-    setDropdown(false);
-    navigate("/");
-  }
+  }, [handleLogout]);
 
   return (
     <div
