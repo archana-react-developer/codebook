@@ -9,7 +9,7 @@ export async function login(authDetail) {
     throw {
       message: response.statusText,
       status: response.status,
-    };
+    };//eslint-disable-line
   }
     const data = await response.json();
      if (data.accessToken) {
@@ -33,7 +33,7 @@ export async function register(authDetail) {
     throw {
       message: response.statusText,
       status: response.status,
-    };
+    };//eslint-disable-line
   }
   const data = await response.json();
   if (data.accessToken) {
