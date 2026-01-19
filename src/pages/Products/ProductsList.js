@@ -27,7 +27,7 @@ export const ProductsList = () => {
       }
     }
     fetchProducts();
-  }, [searchTerm]);
+  }, [searchTerm],[initialProductList]);
 
   return (
     <main>
