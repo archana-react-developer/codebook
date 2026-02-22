@@ -8,7 +8,7 @@ import { useExperiment } from "../../../hooks/useExperiment";
 const DEFAULT_CONTENT = {
   title: "The Ultimate eBook Store",
   subtitle:
-    "CodeBook is the world's most popular and authoritative source for computer science ebooks. Find ratings and access to the newest books digitally.",
+    "Ebookify is the world's most popular and authoritative source for computer science ebooks. Find ratings and access to the newest books digitally.",
 
   // Variant-specific images (B is optional; falls back to A)
   imageA: {
