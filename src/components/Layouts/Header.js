@@ -6,9 +6,9 @@ import { Search } from "../Sections/Search";
 import { DropdownLoggedIn, DropdownLoggedOut } from "../index";
 
 export const Header = () => {
-  const { cartList} = useCart();
+  const { cartList } = useCart();
   const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem("darkMode")) || false
+    JSON.parse(localStorage.getItem("darkMode")) || false,
   );
   const [searchSection, setSearchSection] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -29,7 +29,7 @@ export const Header = () => {
           <Link to="/" className="flex items-center">
             <img src={Logo} className="mr-3 h-10" alt="EBookify Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              EBookify
+              Digital Book E-Commerce Platform
             </span>
           </Link>
           <div className="flex items-center relative">
